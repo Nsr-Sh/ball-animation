@@ -1,0 +1,371 @@
+body {
+    margin: 0;
+    background-color: #bbb;
+    box-sizing: border-box;
+}
+
+
+#container {
+    width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h1 {
+    margin-bottom: 70px;
+}
+
+#box {
+
+    width: 1000px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 3px rgba(107, 107, 107, 0.788);
+    position: relative;
+
+}
+
+#stand {
+    width: 70px;
+    height: 15px;
+    background-color: rgb(44, 44, 44);
+    border-radius: 3px;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+
+}
+
+
+
+#ball,
+#target-ball {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+i {
+    font-size: larger;
+}
+
+#ball {
+    background-color: rgb(0, 4, 255);
+    box-shadow: 0 0 15px 0 rgb(0, 26, 255);
+    bottom: 85%;
+    left: 6%;
+
+}
+
+#ball i {
+    color: rgb(255, 255, 255);
+    opacity: 0.3;
+}
+
+
+
+
+#target-ball {
+    background-color: rgb(255, 0, 157);
+    box-shadow: 0 0 15px 0 rgb(255, 0, 212);
+    bottom: 0;
+    left: 92%;
+
+}
+
+#target-ball i {
+    color: rgba(255, 255, 255);
+    opacity: 0.3;
+
+
+}
+
+
+#box:hover #ball {
+    animation: ball-animate 10s forwards;
+
+    animation-fill-mode: forwards;
+
+}
+
+#box:hover #ball i {
+    animation: heart-animate 10s forwards;
+
+}
+
+#box:hover #target-ball {
+    animation: fade 10s forwards;
+
+}
+
+#box:hover #target-ball i {
+    animation: heart_beat 10s forwards;
+
+}
+
+/* ----------------animation--------------- */
+
+/* ball keyframes */
+
+@keyframes ball-animate {
+
+    /* top 1 */
+    0% {
+        bottom: 85%;
+        left: 6%;
+        transform: scale(1) rotate(0);
+
+
+    }
+
+    /* top 2 */
+    5% {
+        bottom: 85%;
+        left: 10%;
+        transform: scale(1) rotate(360deg);
+        background-color: rgb(0, 4, 255);
+        box-shadow: 0 0 15px 0 rgb(0, 26, 255);
+    }
+
+
+    /*---- bottom 1---- */
+    10% {
+        bottom: 0;
+        background-color: red;
+        box-shadow: 0 0 15px 0 rgb(255, 0, 0);
+        transform: scale(1.2, 0.5);
+
+    }
+
+    /*offset :1% befre and after bottom*/
+    9%,
+    11% {
+        transform: scale(1, 1.3);
+    }
+
+
+    /* top 3 */
+    15% {
+        bottom: 70%;
+    }
+
+
+    /* ----bottom 2----*/
+    20% {
+        bottom: 0;
+        transform: scale(1.2, 0.8);
+    }
+
+    /* offset */
+    19%,
+    21% {
+        transform: scale(1, 1.1);
+
+    }
+
+    /* top 4 */
+    27% {
+        bottom: 50%;
+    }
+
+
+
+    /*----bottom 3----*/
+    35% {
+        bottom: 0;
+        transform: scale(1.1, 0.8);
+
+    }
+
+    /* offset */
+    34%,
+    36% {
+        transform: scale(1);
+    }
+
+    /* top 5*/
+    42% {
+        bottom: 30%;
+
+    }
+
+    /*---- bottom 4----*/
+    50% {
+
+        bottom: 0;
+        transform: scale(1.05, 0.85);
+    }
+
+    /* offset */
+    49%,
+    51% {
+        transform: scale(1);
+    }
+
+    /* top 6*/
+    58% {
+        bottom: 10%;
+    }
+
+    /* ----bottom 5----*/
+    70% {
+        bottom: 0;
+        transform: scale(1, 1.01);
+        left: 83%;
+    }
+
+
+    /* thr */
+    69%,
+    71% {
+        transform: scale(1) rotate(0);
+    }
+
+
+    /*----bottom 6----*/
+    90% {
+        bottom: 0;
+        left: 92%;
+        background-color: rgb(132, 0, 255);
+        box-shadow: 0 0 15px 0 rgb(97, 5, 116);
+        opacity: 1;
+        transform: scale(1) rotate(360deg);
+
+    }
+
+    100% {
+        opacity: 0;
+        bottom: 0;
+        left: 92%;
+    }
+}
+
+/* ---------keyframe heart--------- */
+
+
+@keyframes heart-animate {
+
+
+    5% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(1.2);
+        opacity: 0.9;
+    }
+
+
+    15% {
+        transform: scale(1.05);
+        opacity: 0.3;
+    }
+
+    20% {
+        transform: scale(1.2);
+        opacity: 0.9;
+    }
+
+    27% {
+        transform: scale(1.05);
+        opacity: 0.3;
+    }
+
+    35% {
+        transform: scale(1.2);
+        opacity: 0.9;
+    }
+
+    42% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    48% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.9;
+    }
+
+
+
+    58% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    63% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+
+
+    70% {
+        transform: scale(1.2);
+        opacity: 0.9;
+    }
+
+
+}
+
+/* ----fade keyframes---- */
+@keyframes fade {
+
+    89% {
+        box-shadow: 0 0 15px 0 rgb(240, 3, 208);
+    }
+
+    90% {
+        opacity: 1;
+        box-shadow: 0 0 15px 8px rgb(240, 3, 208);
+
+    }
+
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+@keyframes heart_beat {
+
+    0% {
+        transform: scale(1);
+        opacity: 0.3
+    }
+
+    70% {
+        transform: scale(1);
+    }
+
+    80% {
+        transform: scale(1);
+        opacity: 0.3
+    }
+
+    90% {
+        transform: scale(1.4);
+        opacity: 1;
+
+    }
+
+
+}
